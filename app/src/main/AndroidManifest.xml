@@ -14,20 +14,50 @@
         android:theme="@style/Theme.HelloWorld"
         tools:targetApi="31">
         <activity
-            android:name=".HelpActivity"
+            android:name=".DutaTani"
             android:exported="true"
-            android:label="Help Activity"/>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:noHistory="true"
-            android:label="Main Activity">
+            android:label="@string/title_activity_duta_tani" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SampleListView"
+            android:exported="false" />
+        <activity
+            android:name=".SampleList"
+            android:exported="true"
+            android:label="Sample List"/>
+
+        <activity
+            android:name=".SampleCardView"
+            android:exported="false" />
+        <activity
+            android:name=".ProteinTrackerApp"
+            android:exported="false" />
+        <activity
+            android:name=".TableActivity"
+            android:exported="false"
+            android:label="Table Activity" />
+        <activity
+            android:name=".ConstraintActivity"
+            android:exported="true"
+            android:label="Constrain Activity" />
+        <activity
+            android:name=".TestLinear"
+            android:exported="true"
+            android:label="Linear Activity" />
+        <activity
+            android:name=".HelpActivity"
+            android:exported="true"
+            android:label="Help Activity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Main Activity"
+            android:noHistory="false" />
     </application>
 
 </manifest>

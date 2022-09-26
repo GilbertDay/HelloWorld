@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_duta_tani"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <ImageButton
+        android:id="@+id/btn_petani"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="10dp"
+        android:background="#A0CFD5"
+        android:backgroundTint="#E298EF"
+        app:layout_constraintEnd_toStartOf="@+id/btn_gps3"
+        app:layout_constraintStart_toEndOf="@+id/btn_map"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_duta_tani"
+        app:srcCompat="@drawable/ic_baseline_accessibility_new_24"
+        app:tint="#9C27B0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_gps3"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="30dp"
+        android:background="#A0CFD5"
+        android:backgroundTint="#DC8F6C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_petani"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_duta_tani"
+        app:srcCompat="@drawable/ic_baseline_wifi_24"
+        app:tint="#E3410E"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_gps"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="10dp"
+        android:background="#A0CFD5"
+        android:backgroundTint="#7FD7E3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_duta_tani"
+        app:srcCompat="@drawable/ic_baseline_add_location_24"
+        app:tint="#0B81B6"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_map"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="10dp"
+        android:background="#94B86A"
+        android:backgroundTint="#A6CA7D"
+        app:layout_constraintEnd_toStartOf="@+id/btn_petani"
+        app:layout_constraintStart_toEndOf="@+id/btn_gps"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_duta_tani"
+        app:srcCompat="@drawable/ic_baseline_map_24"
+        app:tint="#4CAF50"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txt_gps"
+        android:layout_width="72dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="32dp"
+        android:text="Lahan by GPS"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_gps" />
+
+    <TextView
+        android:id="@+id/txt_map"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="21dp"
+        android:text="Lahan by Map"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_gps"
+        app:layout_constraintTop_toBottomOf="@+id/btn_map" />
+
+    <TextView
+        android:id="@+id/txt_petani"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Input Petani"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/txt_map"
+        app:layout_constraintTop_toBottomOf="@+id/btn_petani" />
+
+    <TextView
+        android:id="@+id/txt_drone"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Drone"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_petani"
+        app:layout_constraintTop_toBottomOf="@+id/btn_gps3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnInput : Button
     lateinit var editInputNama : EditText
     lateinit var btnHelp : Button
+    lateinit var btnLinear : Button
+    lateinit var btnConstraint : Button
+    lateinit var btnTable : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,5 +44,27 @@ class MainActivity : AppCompatActivity() {
             intent.putExtras(bundle)
             startActivity(intent)
         })
+
+        //Pindah Linear
+        btnLinear = findViewById(R.id.btn_linear)
+        btnLinear.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this@MainActivity, TestLinear::class.java)
+            startActivity(intent)
+        })
+
+        //Pindah Constraint
+        btnConstraint = findViewById(R.id.btn_constraint)
+        btnConstraint.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this@MainActivity, ConstraintActivity::class.java)
+            startActivity(intent)
+        })
+
+        //Pindah Table
+        btnTable = findViewById(R.id.btn_table)
+        btnTable.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this@MainActivity, TableActivity::class.java)
+            startActivity(intent)
+        })
+
     }
 }
