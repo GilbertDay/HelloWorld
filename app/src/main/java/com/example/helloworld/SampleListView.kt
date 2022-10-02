@@ -1,5 +1,6 @@
 package com.example.helloworld
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -19,36 +20,6 @@ class SampleListView : AppCompatActivity() {
     lateinit var lvSample : ListView
     lateinit var spSampleList : Spinner
 
-//    override fun onCreateContextMenu(
-//        menu: ContextMenu?,
-//        v: View?,
-//        menuInfo: ContextMenu.ContextMenuInfo?
-//    ) {
-//        super.onCreateContextMenu(menu, v, menuInfo)
-//        val inflater = menuInflater
-//        inflater.inflate(R.menu.menu_sample_list_view, menu)
-//    }
-
-    //Saat Menu diklik
-//    override fun onContextItemSelected(item: MenuItem): Boolean {
-//        var info = item.menuInfo as AdapterView.AdapterContextMenuInfo
-//        when(item.itemId){
-//            R.id.menu_add -> {
-//                Snackbar.make(lvSample,"Anda memilih: Add Item ke - ${info.id}",
-//                    Snackbar.LENGTH_LONG).show()
-//            }
-//            R.id.menu_edit -> {
-//                Snackbar.make(lvSample,"Anda memilih: Edit Item ke - ${info.id}",
-//                    Snackbar.LENGTH_LONG).show()
-//            }
-//            R.id.menu_delete -> {
-//                Snackbar.make(lvSample,"Anda memilih: Delete Item ke - ${info.id}",
-//                    Snackbar.LENGTH_LONG).show()
-//            }
-//        }
-//        return super.onContextItemSelected(item)
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sample_list_view)
@@ -62,8 +33,39 @@ class SampleListView : AppCompatActivity() {
                 Snackbar.LENGTH_LONG).show()
         }
 
-
-
         registerForContextMenu(lvSample)
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_sample_list_view, menu)
+    }
+
+    //Saat Menu diklik
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        var info = item.menuInfo as AdapterView.AdapterContextMenuInfo
+        when(item.itemId){
+            R.id.menu_add -> {
+                Snackbar.make(lvSample,"Anda memilih: Add Item ke - ${info.id}",
+                    Snackbar.LENGTH_LONG).show()
+            }
+            R.id.menu_edit -> {
+                var intent = Intent(this@SampleListView, EditNama::class.java)
+                intent.putExtra("nama", items.get(info.id.toInt()))
+                startActivity(intent)
+            }
+            R.id.menu_delete -> {
+                Snackbar.make(lvSample,"Anda memilih: Delete Item ke - ${info.id}",
+                    Snackbar.LENGTH_LONG).show()
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+
 }

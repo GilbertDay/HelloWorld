@@ -14,23 +14,26 @@
         android:theme="@style/Theme.HelloWorld"
         tools:targetApi="31">
         <activity
+            android:name=".EditNama"
+            android:exported="false" />
+        <activity
             android:name=".DutaTani"
             android:exported="true"
-            android:label="@string/title_activity_duta_tani" >
+            android:label="@string/title_activity_duta_tani" />
+        <activity
+            android:name=".SampleListView"
+            android:exported="false"
+            android:label="List View" />
+        <activity
+            android:name=".SampleList"
+            android:exported="true"
+            android:label="Sample List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SampleListView"
-            android:exported="false" />
-        <activity
-            android:name=".SampleList"
-            android:exported="true"
-            android:label="Sample List"/>
-
         <activity
             android:name=".SampleCardView"
             android:exported="false" />
