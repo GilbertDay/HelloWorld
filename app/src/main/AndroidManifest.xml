@@ -14,6 +14,13 @@
         android:theme="@style/Theme.HelloWorld"
         tools:targetApi="31">
         <activity
+            android:name=".SampleCardView"
+            android:exported="false"
+            android:label="Card View"/>
+        <activity
+            android:name=".SampleRecycleView"
+            android:exported="false" />
+        <activity
             android:name=".EditNama"
             android:exported="false" />
         <activity
@@ -27,16 +34,7 @@
         <activity
             android:name=".SampleList"
             android:exported="true"
-            android:label="Sample List">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".SampleCardView"
-            android:exported="false" />
+            android:label="Sample List" />
         <activity
             android:name=".ProteinTrackerApp"
             android:exported="false" />
@@ -60,7 +58,13 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="Main Activity"
-            android:noHistory="false" />
+            android:noHistory="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

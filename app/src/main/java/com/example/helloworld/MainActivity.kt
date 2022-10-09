@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnLinear : Button
     lateinit var btnConstraint : Button
     lateinit var btnTable : Button
+    lateinit var btnRecycleView : Button
+    lateinit var btnCardView : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,5 +68,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
+        //Recycle View
+        btnRecycleView = findViewById(R.id.btn_recycler_view)
+        btnRecycleView.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this@MainActivity, SampleRecycleView::class.java)
+            startActivity(intent)
+        })
+
+        //Card View
+        btnCardView = findViewById(R.id.btn_card_view)
+        btnCardView.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this@MainActivity, SampleCardView::class.java)
+            startActivity(intent)
+        })
     }
 }

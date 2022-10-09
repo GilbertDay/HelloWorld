@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.helloworld.adapter.PetaniCVAdapter
+import com.example.helloworld.adapter.PetaniAdapter
 import com.example.helloworld.model.Petani
 
-class SampleCardView : AppCompatActivity() {
-    lateinit var cvSample : RecyclerView
-    lateinit var petaniCVAdapter: PetaniCVAdapter
+class SampleRecycleView : AppCompatActivity() {
+    lateinit var rvSample : RecyclerView
+    lateinit var petaniAdapter: PetaniAdapter
     lateinit var lPetani: List<Petani>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sample_card_view)
+        setContentView(R.layout.activity_sample_recycle_view)
 
-        cvSample = findViewById(R.id.rvCardView)
+        rvSample = findViewById(R.id.rvLatihan)
 
         lPetani = listOf(
             Petani("P01", "Gilbert Day", "20", "50", "2"),
@@ -25,11 +25,11 @@ class SampleCardView : AppCompatActivity() {
             Petani("P04","Wahyu","200","50","21")
         )
 
-        petaniCVAdapter = PetaniCVAdapter(lPetani)
+        petaniAdapter = PetaniAdapter(lPetani)
 
-        cvSample.apply {
-            layoutManager = LinearLayoutManager(this@SampleCardView)
-            adapter = petaniCVAdapter
+        rvSample.apply {
+            layoutManager = LinearLayoutManager(this@SampleRecycleView)
+            adapter = petaniAdapter
         }
     }
 }
