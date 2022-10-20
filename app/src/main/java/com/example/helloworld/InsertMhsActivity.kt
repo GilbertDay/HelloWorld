@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.helloworld.model.ResponseAddMahasiswaItem
 
-class InsertDataActivity : AppCompatActivity() {
+class InsertMhsActivity : AppCompatActivity() {
     lateinit var txtNim : EditText
     lateinit var txtNama : EditText
     lateinit var txtEmail :EditText
@@ -23,7 +23,7 @@ class InsertDataActivity : AppCompatActivity() {
         txtEmail = findViewById(R.id.txtEmail)
         txtAlamat = findViewById(R.id.txtAlamat)
         txtNimProgmob = findViewById(R.id.txtNimProgmob)
-        btnPost = findViewById(R.id.btnpost)
+        btnPost = findViewById(R.id.btnInsert)
 
         btnPost.setOnClickListener(View.OnClickListener { view ->
             val nim = txtNim.text.toString()

@@ -10,7 +10,19 @@
         android:id="@+id/btnGetAPI"
         android:layout_width="102dp"
         android:layout_height="58dp"
-        android:text="GET"
+        android:text="Get"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnInsertAPI"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <Button
+        android:id="@+id/btnInsertAPI"
+        android:layout_width="102dp"
+        android:layout_height="58dp"
+        android:text="Insert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

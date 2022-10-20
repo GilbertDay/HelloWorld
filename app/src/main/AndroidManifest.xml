@@ -16,7 +16,16 @@
         android:theme="@style/Theme.HelloWorld"
         tools:targetApi="31">
         <activity
-            android:name=".InsertDataActivity"
+            android:name=".DeleteMhsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InsertMhsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GetMhsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ServiceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GetAPIActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ServiceActivity"
-            android:exported="true"/>
-
         <activity
             android:name=".SampleCardView"
             android:exported="false"

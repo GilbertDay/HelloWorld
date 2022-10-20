@@ -50,7 +50,7 @@
                 android:text="telepon" />
 
             <TextView
-                android:id="@+id/email2"
+                android:id="@+id/email"
                 android:layout_width="274dp"
                 android:layout_height="31dp"
                 android:layout_marginStart="14dp"

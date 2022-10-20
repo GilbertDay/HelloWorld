@@ -50,15 +50,15 @@ class SampleListView : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         var info = item.menuInfo as AdapterView.AdapterContextMenuInfo
         when(item.itemId){
-            R.id.menu_add -> {
-                Snackbar.make(lvSample,"Anda memilih: Add Item ke - ${info.id}",
-                    Snackbar.LENGTH_LONG).show()
-            }
-            R.id.menu_edit -> {
-                var intent = Intent(this@SampleListView, EditNama::class.java)
-                intent.putExtra("nama", items.get(info.id.toInt()))
-                startActivity(intent)
-            }
+//            R.id.menu_add -> {
+//                Snackbar.make(lvSample,"Anda memilih: Add Item ke - ${info.id}",
+//                    Snackbar.LENGTH_LONG).show()
+//            }
+//            R.id.menu_edit -> {
+//                var intent = Intent(this@SampleListView, EditNama::class.java)
+//                intent.putExtra("nama", items.get(info.id.toInt()))
+//                startActivity(intent)
+//            }
             R.id.menu_delete -> {
                 Snackbar.make(lvSample,"Anda memilih: Delete Item ke - ${info.id}",
                     Snackbar.LENGTH_LONG).show()

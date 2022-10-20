@@ -1,9 +1,6 @@
 package com.example.helloworld.network
 
-import com.example.helloworld.model.ResponseAddMahasiswa
-import com.example.helloworld.model.ResponseAddMahasiswaItem
-import com.example.helloworld.model.ResponseMahasiswaItem
-import com.example.helloworld.model.ResponseUsersItem
+import com.example.helloworld.model.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -27,7 +24,7 @@ class NetworkConfig {
 
         fun getRetrofit() : Retrofit {
             return Retrofit.Builder()
-                .baseUrl("https://kpsi.fti.ukdw.ac.id")
+                .baseUrl("https://kpsi.fti.ukdw.ac.id/")
                 .client(getInterceptor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -35,8 +32,12 @@ class NetworkConfig {
         fun getService() = getRetrofit().create(Users::class.java)
 }
     interface Users {
+        @GET("api/progmob/mhs/72200391")
+        fun getMahasiswa(): Call<List<DataMahasiswaItem>>
         @POST("api/progmob/mhs/create")
         fun addMahasiswa(@Body req : ResponseAddMahasiswaItem): Call<ResponseAddMahasiswa>
-        fun enqueue(callback: Callback<List<ResponseMahasiswaItem>>)
+        fun enqueue(callback: Callback<List<DataMahasiswaItem>>)
+        @POST("api/progmob/mhs/delete")
+        fun deleteMahasiswa(): Call<List<DataMahasiswaItem>>
 
     }

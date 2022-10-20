@@ -31,7 +31,7 @@ class UsersAdapter(val users: List<ResponseUsersItem>?):
         fun bindUsers(users: ResponseUsersItem?) {
             itemView.apply {
                 txtNama = findViewById(R.id.nama)
-                txtEmail = findViewById(R.id.email2)
+                txtEmail = findViewById(R.id.email)
                 txtAlamat = findViewById(R.id.alamat)
                 txtNoTelp = findViewById(R.id.notelp)
                 txtNama.text = users?.name
